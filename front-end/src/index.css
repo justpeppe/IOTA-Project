@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* === IOTA BRAND COLORS === */
+  --iota-bg-primary: #0F141C;
+  --iota-bg-secondary: #171D26;
+  --iota-bg-button: #253041;
+  --iota-bg-button-hover: #313D50;
+  --iota-modal-overlay: rgba(0, 47, 109, 0.72);
+  --iota-scrollbar: #3C4656;
+
+  /* === TEXT === */
+  --iota-text-primary: #E3EAF6;
+  --iota-text-muted: #8892A1;
+  --iota-text-danger: #FFB0BE;
+  --iota-text-on-button: #E3EAF6;
+
+  /* === BORDER === */
+  --iota-border: #8892A1;
+  --iota-separator: rgba(190, 216, 255, 0.08);
+
+  /* === ACCENT BLU E MOVE === */
+  --iota-blue-accent: #BED8FF;
+  --iota-blue-deep: rgba(0, 47, 109, 1);
+  --move-gold: #FFD700;
+
+  /* === TYPOGRAPHY === */
+  --iota-font: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --iota-line-height: 24px;
+  --iota-letter-spacing: 0.1px;
+}
+
+@layer base {
+  body {
+    @apply bg-iota-primary text-iota-primary min-h-screen antialiased relative font-sans;
+    font-family: var(--iota-font);
+    line-height: var(--iota-line-height);
+    letter-spacing: var(--iota-letter-spacing);
+  }
+
+  ::selection {
+    background-color: rgba(190, 216, 255, 0.3);
+    /* iota-blue with opacity */
+    color: var(--iota-blue-accent);
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-surface/80 backdrop-blur-xl border border-border;
+  }
+
+  .glass-card {
+    @apply bg-surface/60 backdrop-blur-lg border border-border rounded-2xl shadow-xl;
+  }
+
+  .bg-noise-overlay {
+    @apply absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
