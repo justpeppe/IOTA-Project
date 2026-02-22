@@ -17,7 +17,7 @@ export function AppLayout({ children, onGoHome, onNavigate }: AppLayoutProps) {
 
                 <Header onGoHome={onGoHome} onNavigate={onNavigate} />
 
-                <main className="flex-1 w-full max-w-7xl mx-auto relative px-5 md:px-8 pt-6 pb-24 flex flex-col">
+                <main className="flex-1 w-full max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-24 relative z-10 flex flex-col">
                     <AnimatePresence mode="wait">
                         {children}
                     </AnimatePresence>

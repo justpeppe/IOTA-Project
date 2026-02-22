@@ -21,20 +21,20 @@ export function VerifyView({ onGoHome }: { onGoHome: () => void }) {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            className="flex flex-col h-full gap-6 w-full max-w-xl mx-auto mt-4 md:mt-12"
+            className="flex flex-col h-full gap-6 w-full max-w-xl mx-auto mt-2 md:mt-4"
         >
-            <div className="text-center mb-6 md:mb-10">
+            <div className="text-center mb-4 md:mb-6">
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Host Verification</h2>
-                <p className="text-text-muted md:text-lg mt-2">Scan a TrustPass QR code to verify cryptographically.</p>
+                <p className="text-text-muted md:text-lg mt-1">Scan a TrustPass QR code to verify cryptographically.</p>
             </div>
 
             <AnimatePresence mode="wait">
                 {step === 'scan' && (
-                    <motion.div key="scan" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex flex-col items-center gap-8">
+                    <motion.div key="scan" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex flex-col items-center gap-4">
                         {/* Fake Camera Viewfinder */}
-                        <div className="w-full max-w-sm mx-auto aspect-[4/5] bg-iota-secondary/80 rounded-3xl relative overflow-hidden flex items-center justify-center border-[6px] border-iota-primary shadow-xl">
-                            <div className="absolute inset-x-8 inset-y-16 border-2 border-iota-blue/50 border-dashed rounded-[40px] bg-iota-blueDeep/20" />
-                            <div className="absolute w-full h-[3px] bg-iota-blue/70 shadow-none animate-[ping_3s_infinite]" />
+                        <div className="w-full max-w-[320px] mx-auto aspect-square bg-iota-secondary/80 rounded-3xl relative overflow-hidden flex items-center justify-center border-[6px] border-iota-primary shadow-xl">
+                            <div className="absolute inset-x-6 inset-y-6 border-2 border-iota-blue/50 border-dashed rounded-[32px] bg-iota-blueDeep/20" />
+                            <div className="absolute w-full h-[2px] bg-iota-blue/70 shadow-none animate-[ping_3s_infinite]" />
                             <div className="flex flex-col items-center text-text-muted z-10">
                                 <ScanFace className="w-16 h-16 mb-4 opacity-50 text-white" />
                                 <span className="font-medium text-white/50 text-lg">Waiting for QR Code...</span>
